@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunting</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            margin: 0;
+        }
+        .title{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            color: #005d69;
+            line-height: 1.5;
+        }
+        .header{
+            /* background-color: #333;
+            color: #fff;  */
+            padding: 20px;
+            margin: 20px;
+            ;
+            /* font-size: 24px; */
+        }
+        .p{
+            text-align: center;
+            font-size: 17px;
+            font-weight: 100;
+            color: #005d69;
+        }
+        .banner{
+            width: 100%;
+        }
+        .note{
+            margin: 25px;
+            padding: 15px;
+            background-color: rgb(255, 206, 206);
+            color: #005d69;
+            line-height: 1.5;
+            font-size: 17px;
+            border: red solid 2px;
+        }
+        .form-stunting{
+            margin:50px 15%;
+            padding: 25px;
+            background-color: #f0efff;
+        }
+        .form-stunting h1{
+            text-align: center;
+        }
+        .form-stunting input, .form-stunting select{
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 15px 0px 15px 15px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            display: flex;
+        flex-direction: column;
+        }
+        .form-stunting input::-webkit-outer-spin-button,
+        .form-stunting input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        .form-stunting button{
+            width: 100%;
+            padding: 10px;
+            background-color: #005d69;
+            color: white;
+            font-size: 15px;
+        }
+        #rekomendasi{
+            color: #005d69;
+            margin:30px 15%;
+        }
+        #hasil{
+            color: #005d69;
+            margin:30px 15%;
+        }
+        #rekomendasi,
+        #hasil,
+        #hasil-1,
+        #hasil-2,
+        #hasil-3,
+        #hasil-4,
+        #hasil-5{
+            display: none;
+        }
+        .footer{
+            background-color: #f0efff;
+            padding: 15px;
+            color: #000000; /* Set text color for the footer */
+            padding: 20px;
+            /* text-align: center; 
+            width: 100%;*/
+        }
+        .h6{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>  
+    <h1 class="title">GEMAS 
+        <p class="p">(Gerakan Mencegah Stunting)
+    </h1>    
+    <!-- <p class="p"> (Gerakan Mencegah Stunting) </p> -->
+    <img src="kkntim2udp.png" alt="banner" class="banner">
+    <div class="note">
+        NOTE:
+        <br>
+        Penting untuk konsultasi dengan ahli gizi atau dokter untuk mendapatkan rekomendasi yang lebih spesifik dan sesuai
+        dengan kondisi kesehatan anak stunting. Setiap anak mungkin memiliki kebutuhan nutrisi yang berbeda, dan
+        perencanaan menu makanan yang tepat dapat membantu mendukung pertumbuhan dan perkembangan mereka dengan
+        lebih baik.
+    </div>
+    <div class="form-stunting">
+        <h1>CEK STUNTING</h1>
+        <label for="jk">Jenis Kelamin</label>
+        <select id="jk">
+            <option value="l">Laki-laki</option>
+            <option value="p">Perempuan</option>
+        </select>
+        <label for="usia">Usia</label>
+        <select id="usia">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label for="tb">Tinggi Badan</label>
+        <input type="number" id="tb">
+        <label for="bb">Berat Badan</label>
+        <input type="number" id="bb">
+        <label for="lk">Lingkar Kepala</label>
+        <input type="number" id="lk">
+        <div style="padding: 0 15%;">
+            <button type="submit" onclick="cekStunting()">SUBMIT</button>
+        </div>
+    </div>
+    <div id="hasil">
+        <p style="text-align: center;"><b>HASIL:</b></p>
+        <p id="hasil-1">
+            Anak <b>bebas stunting</b>. Stunting adalah kondisi ketika tinggi badan anak lebih pendek dari nilai rata-rata yang diharapkan untuk usia dan jenis kelaminnya.
+        </p>
+        <p id="hasil-2">
+            Anak <b>beresiko Stunting</b>. Stunting adalah kondisi ketika tinggi badan anak lebih pendek dari nilai rata-rata yang diharapkan untuk usia dan jenis kelaminnya.
+        </p>
+        <p id="hasil-3">
+            Anak <b>stunting ringan</b>. Stunting adalah kondisi ketika tinggi badan anak lebih pendek dari nilai rata-rata yang diharapkan untuk usia dan jenis kelaminnya. Stunting adalah kondisi ketika tinggi badan anak lebih pendek dari nilai rata-rata yang diharapkan untuk usia dan jenis kelaminnya. Stunting biasanya menunjukkan masalah pertumbuhan tubuh secara keseluruhan. Karena itu, jika tinggi bada dan lingkar kepala menunjukkan nilai stunting, tetapi berat badan menunjukkan nilai normal, ini menunjukkan bahwa meskipun tinggi badan dan pertumbuhan otak anak mungkin terpengaruh, berat badan anak berada dalam kisaran normal atau sesuai dengan rata-rata yang diharapkan untuk usia dan jenis kelaminnya.
+        </p>
+        <p id="hasil-4">
+            Anak <b>mengalami stunting</b>. Stunting adalah kondisi ketika tinggi badan anak lebih pendek dari nilai rata-rata yang diharapkan untuk usia dan jenis kelaminnya. Stunting biasanya menunjukkan masalah pertumbuhan tubuh secara keseluruhan.
+        </p>
+        <p id="hasil-5">
+            Anak <b>kurang gizi</b>.
+        </p>
+    </div>
+    <div id="rekomendasi">
+        <b>Berikut adalah rekomendasi nutrisi dan menu makanan yang dapat membantu anak stunting:</b>
+        <br>
+        <ol>
+            <li>
+                Protein: Pastikan anak mendapatkan asupan protein yang cukup, karena protein berperan penting dalam pembentukan dan pemeliharaan jaringan tubuh. Sumber protein yang baik antara lain telur, daging tanpa lemak, ikan, produk susu rendah lemak, dan kacang-kacangan.
+            </li>
+            <li>
+                Karbohidrat: Pilih karbohidrat kompleks seperti nasi, roti gandum, kentang, dan biji-bijian utuh, karena karbohidrat ini memberikan energi yang stabil dan lebih sehat.
+            </li>
+            <li>
+                Lemak Sehat: Pilih lemak sehat dari sumber seperti alpukat, kacang-kacangan, ikan berlemak seperti salmon, minyak zaitun, dan minyak biji rami.
+            </li>
+            <li>
+                Sayuran: Sediakan beragam sayuran yang berwarna-warni, seperti wortel, brokoli, bayam, kubis, dan tomat. Sayuran kaya akan vitamin, mineral, dan serat yang penting untuk pertumbuhan dan kesehatan tubuh.
+            </li>
+            <li>
+                Buah-buahan: Berikan berbagai macam buah-buahan segar atau kalengan tanpa pemanis tambahan. Buah-buahan mengandung banyak vitamin, mineral, dan serat yang membantu mendukung pertumbuhan anak.
+            </li>
+            <li>
+                Susu dan Produk Susu: Anak stunting membutuhkan asupan kalsium dan vitamin D untuk mendukung pertumbuhan tulang dan gigi mereka. Berikan susu atau produk susu rendah lemak sebagai sumber kalsium.
+            </li>
+            <li>
+                Suplemen Gizi: Dalam beberapa kasus, anak stunting mungkin memerlukan suplemen gizi yang diresepkan oleh dokter atau ahli gizi untuk membantu memperbaiki kekurangan nutrisi.
+            </li>
+        </ol>
+        Selain nutrisi yang tepat, pastikan anak stunting mendapatkan cukup cairan dengan minum air putih yang cukup sepanjang hari. Hindari minuman manis yang berlebihan dan perhatikan jumlah konsumsi gula dan makanan tinggi garam.
+    </div>
+    <div class="footer">
+        <h2>ABOUT US</h1>
+        <h4>Email : kkntim2desajuron@gmail.com</h4>
+        <h4>Instagram : @kkndesajuron_undip</h4>
+        <h6 class="h6">©KKN TIM 2 JURON UNDIP 2023</h6>
+    </div>
+    <script>
+        var jk = document.getElementById("jk");
+        var usia = document.getElementById("usia");
+        var bb = document.getElementById("bb");
+        var tb = document.getElementById("tb");
+        var lk = document.getElementById("lk");
+        var rekomendasi = document.getElementById("rekomendasi");
+        var hasil = document.getElementById("hasil");
+        var hasil_1 = document.getElementById("hasil-1");
+        var hasil_2 = document.getElementById("hasil-2");
+        var hasil_3 = document.getElementById("hasil-3");
+        var hasil_4 = document.getElementById("hasil-4");
+        var hasil_5 = document.getElementById("hasil-5");
+        function cekStunting(){
+            let jkValue = parseFloat(jk.value);
+            let usiaValue = parseFloat(usia.value);
+            let bbValue = parseFloat(bb.value);
+            let tbValue = parseFloat(tb.value);
+            let lkValue = parseFloat(lk.value);
+            let sdLk = 0;
+            let sdTb = 0;
+            let sdBb = 0;
+            if(jkValue=="p"){
+                switch(usiaValue){
+                    case 1:
+                        sdLk = (lkValue-44.9)/2;
+                        sdTb = (tbValue-69.8)/2;
+                        sdBb = (bbValue-8.7)/2;
+                        break;
+                    case 2:
+                        sdLk = (lkValue-47.2)/2;
+                        sdTb = (tbValue-79.2)/2;
+                        sdBb = (bbValue-10.7)/2;
+                        break;
+                    case 3:
+                        sdLk = (lkValue-48.5)/2;
+                        sdTb = (tbValue-87.8)/2;
+                        sdBb = (bbValue-12.5)/2;
+                        break;
+                    case 4:
+                        sdLk = (lkValue-49.3)/2;
+                        sdTb = (tbValue-95.0)/2;
+                        sdBb = (bbValue-14.1)/2;
+                        break;
+                    case 5:
+                        sdLk = (lkValue-49.9)/2;
+                        sdTb = (tbValue-101.1)/2;
+                        sdBb = (bbValue-15.7)/2;
+                        break;
+                }
+            }else{
+                switch(usiaValue){
+                    case 1:
+                        sdLk = (lkValue-46.1)/2;
+                        sdTb = (tbValue-71.7)/2;
+                        sdBb = (bbValue-9.2)/2;
+                        break;
+                    case 2:
+                        sdLk = (lkValue-48.3)/2;
+                        sdTb = (tbValue-81.5)/2;
+                        sdBb = (bbValue-11.3)/2;
+                        break;
+                    case 3:
+                        sdLk = (lkValue-49.5)/2;
+                        sdTb = (tbValue-89.0)/2;
+                        sdBb = (bbValue-13.3)/2;
+                        break;
+                    case 4:
+                        sdLk = (lkValue-50.2)/2;
+                        sdTb = (tbValue-95.8)/2;
+                        sdBb = (bbValue-15.1)/2;
+                        break;
+                    case 5:
+                        sdLk = (lkValue-50.7)/2;
+                        sdTb = (tbValue-102.0)/2;
+                        sdBb = (bbValue-16.8)/2;
+                        break;
+                }
+            }
+            //1 = normal. 2 = ringan. 3 = stunting
+            let statBb = 1;
+            let statTb = 1;
+            let statLk = 1;
+            if(sdBb<-3){
+                statBb = 3;
+            }else if(sdBb<-2){
+                statBb = 2;
+            }
+            if(sdTb<-3){
+                statTb = 3;
+            }else if(sdTb<-2){
+                statTb = 2;
+            }
+            if(sdLk<-3){
+                statLk = 3;
+            }else if(sdLk<-2){
+                statLk = 2;
+            }
+            //1 = bebas. 2 = resiko. 3 = ringan. 4 = stunting. 5 kurang gizi
+            let statSum = 1;
+            switch(statBb){
+                case 1:
+                    switch(statTb){
+                        case 1:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 1;
+                                    break;
+                                case 2:
+                                    statSum = 2;
+                                    break;
+                                case 3:
+                                    statSum = 3;
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 3;
+                                    break;
+                                case 2:
+                                    statSum = 3;
+                                    break;
+                                case 3:
+                                    statSum = 3;
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 3;
+                                    break;
+                                case 2:
+                                    statSum = 3;
+                                    break;
+                                case 3:
+                                    statSum = 4;
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch(statTb){
+                        case 1:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 5;
+                                    break;
+                                case 2:
+                                    statSum = 2;
+                                    break;
+                                case 3:
+                                    statSum = 2;
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 3;
+                                    break;
+                                case 2:
+                                    statSum = 4;
+                                    break;
+                                case 3:
+                                    statSum = 4;
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 3;
+                                    break;
+                                case 2:
+                                    statSum = 4;
+                                    break;
+                                case 3:
+                                    statSum = 4;
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch(statTb){
+                        case 1:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 5;
+                                    break;
+                                case 2:
+                                    statSum = 3;
+                                    break;
+                                case 3:
+                                    statSum = 3;
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 3;
+                                    break;
+                                case 2:
+                                    statSum = 4;
+                                    break;
+                                case 3:
+                                    statSum = 4;
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch(statLk){
+                                case 1:
+                                    statSum = 4;
+                                    break;
+                                case 2:
+                                    statSum = 4;
+                                    break;
+                                case 3:
+                                    statSum = 4;
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+            hasil_1.style.display = "none";
+            hasil_2.style.display = "none";
+            hasil_3.style.display = "none";
+            hasil_4.style.display = "none";
+            hasil_5.style.display = "none";
+            hasil.style.display = "block";
+            rekomendasi.style.display = "block";
+            switch(statSum){
+                case 1:
+                    hasil_1.style.display = "block";
+                    break;
+                case 2:
+                    hasil_2.style.display = "block";
+                    break;
+                case 3:
+                    hasil_3.style.display = "block";
+                    break;
+                case 4:
+                    hasil_4.style.display = "block";
+                    break;
+                case 5:
+                    hasil_5.style.display = "block";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
